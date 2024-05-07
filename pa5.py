@@ -17,7 +17,7 @@ def bisection_root(function,a,b):
         raise ValueError
     if valm<0.001:
         return value
-    elif (valm < 0 and vala < 0) or (valm>0 and vala>0)
+    elif (valm < 0 and vala < 0) or (valm>0 and vala>0):
         return bisection_root(function,valm,b)
-    elif (valm < 0 and valb < 0) or (valm>0 and valb>0)
+    elif (valm < 0 and valb < 0) or (valm>0 and valb>0):
         return bisection_root(function,a,valm)
