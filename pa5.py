@@ -16,12 +16,18 @@ def bisection_root(function,a,b):
     vala = function(a)
     valb = function(b)
     valm = function(median)
+    print("avalis =",vala)
+    print("bvalis =",valb)
+    print("medianval =",valm)
+
+
     if (vala > 0 and valb > 0) or (vala < 0 and valb < 0):
         raise ValueError
-    if valm<0.001:
+    if (valm>0 and valm<0.001) or (valm<0 and valm> -0.001):
         return median
-    elif (valm < 0 and vala > 0) or (valm >  0 and vala < 0):
-        return bisection_root(function,a,median)
-    else:
+    elif (valm < 0 and vala < 0) or (valm >  0 and vala > 0):
         return bisection_root(function,median,b)
+    else:
+        return bisection_root(function,a,median)
+
 
