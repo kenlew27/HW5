@@ -16,7 +16,7 @@ def bisection_root(function,a,b):
     if (vala > 0 and valb > 0) or (vala < 0 and valb < 0):
         raise ValueError
     if valm<0.001:
-        return value
+        return median
     elif (valm < 0 and vala < 0) or (valm>0 and vala>0):
         return bisection_root(function,valm,b)
     elif (valm < 0 and valb < 0) or (valm>0 and valb>0):
