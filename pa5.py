@@ -1,3 +1,6 @@
+import math
+
+
 def gcd(a,b):
     if a==b:
         return a
@@ -17,7 +20,8 @@ def bisection_root(function,a,b):
         raise ValueError
     if valm<0.001:
         return median
-    elif (valm < 0 and vala < 0) or (valm>0 and vala>0):
-        return bisection_root(function,valm,b)
-    elif (valm < 0 and valb < 0) or (valm>0 and valb>0):
-        return bisection_root(function,a,valm)
+    elif (valm < 0 and vala > 0) or (valm >  0 and vala < 0):
+        return bisection_root(function,a,median)
+    else:
+        return bisection_root(function,median,b)
+
