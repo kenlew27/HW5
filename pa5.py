@@ -16,11 +16,6 @@ def bisection_root(function,a,b):
     vala = function(a)
     valb = function(b)
     valm = function(median)
-    #print("avalis =",vala)
-    #print("bvalis =",valb)
-    #print("medianval =",valm)
-
-
     if (vala > 0 and valb > 0) or (vala < 0 and valb < 0):
         raise ValueError
     if (valm>0 and valm<0.0000001) or (valm<0 and valm> -0.0000001):
@@ -29,6 +24,18 @@ def bisection_root(function,a,b):
         return bisection_root(function,median,b)
     else:
         return bisection_root(function,a,median)
+        
+def remove_pairs(str):
+    if len(str)==0:
+        return ""
+    if str[0:2] == "ew" or str[0:2] == "we" or str[0:2] == "ns" or str[0:2] == "sn":
+        return remove_pairs(str[2:])
+    else:
+        return str[0] + remove_pairs(str[1:])
 
-#print(bisection_root(lambda x: 1.33 -x , 1, 3))
+
+
+
+
+
 
