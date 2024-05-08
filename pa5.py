@@ -1,31 +1,31 @@
-def gcd(a,b):
+def gcd(a, b):
     '''
     GCD function with two number input and modulus operation
     '''
-    if a==b:
+    if a == b:
         return a
     if a < b:
-        return gcd(b,a)
+        return gcd(b, a)
     if b == 0:
         return a
-    return gcd(b, a%b)
+    return gcd(b, a % b)
 
-def bisection_root(function,a,b):
+def bisection_root(function, a, b):
     '''
     Bisection Function with function and two bounds input
     '''
-    median = (a+b)/2
+    median = (a + b)/2
     vala = function(a)
     valb = function(b)
     valm = function(median)
-    if (vala >0 and valb > 0) or (vala < 0 and valb < 0):
+    if (vala > 0 and valb > 0) or (vala < 0 and valb < 0):
         raise ValueError
-    if (valm>0 and valm<0.0000001) or (valm<0 and valm > -0.0000001):
+    if (valm > 0 and valm < 0.0000001) or (valm < 0 and valm > -0.0000001):
         return median
-    if (valm <0 and vala < 0 ) or (valm > 0 and vala >  0 ):
-        return bisection_root(function,median,b)
+    if (valm < 0 and vala < 0) or (valm > 0 and vala > 0):
+        return bisection_root(function, median, b)
     else:
-        return bisection_root(function,a,median)
+        return bisection_root(function, a, median)
 
 def remove_pairs(strg):
     '''
