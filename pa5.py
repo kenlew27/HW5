@@ -28,7 +28,7 @@ def bisection_root(function,a,b):
 def remove_pairs(str):
     if len(str)==0:
         return ""
-    if str[0:2] == "ew" or str[0:2] == "we" or str[0:2] == "ns" or str[0:2] == "sn":
+    if str[0:2] == "EW" or str[0:2] == "WE" or str[0:2] == "NS" or str[0:2] == "SN":
         return remove_pairs(str[2:])
     else:
         return str[0] + remove_pairs(str[1:])
