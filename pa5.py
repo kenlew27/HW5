@@ -18,13 +18,14 @@ def bisection_root(function,a,b):
     vala = function(a)
     valb = function(b)
     valm = function(median)
-    if (vala and valb > 0) or (vala and valb < 0):
+    if (vala and valb) > 0 or (vala and valb) < 0:
         raise ValueError
     if (valm>0 and valm<0.0000001) or (valm<0 and valm > -0.0000001):
         return median
     if (valm and vala < 0 ) or (valm and vala >  0 ):
         return bisection_root(function,median,b)
-    return bisection_root(function,a,median)
+    else:
+        return bisection_root(function,a,median)
 
 def remove_pairs(strg):
     '''
